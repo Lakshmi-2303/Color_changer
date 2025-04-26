@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Change Example</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            transition: background-color 1s ease;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="title">Click the button to change background color!</h1>
+    <button onclick="changeColor()">Change Color</button>
+
+    <script>
+        const colors = [
+            '#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#843B62',
+            '#F67280', '#C06C84', '#355C7D', '#16A085', '#FF9A8B',
+            '#8E44AD', '#F39C12', '#2ECC71', '#E74C3C', '#9B59B6',
+            '#3498DB', '#1ABC9C', '#34495E', '#E67E22', '#E84393',
+            '#00CEC9', '#0984E3', '#6C5CE7', '#D63031', '#FD79A8',
+            '#55EFC4', '#00B894', '#FF7675', '#FAB1A0', '#A29BFE',
+            '#81ECEC', '#FFEAA7', '#74B9FF', '#E17055', '#B2BEC3'
+        ];
+
+        function changeColor() {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            document.body.style.backgroundColor = colors[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
